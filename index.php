@@ -1,15 +1,24 @@
 <?php
 
-require_once('./libs/dispatch/src/dispatch.php');
-config('source','libs/dispatch/config.ini');
+require_once('./config.php');
+require_once("$HOME/libs/dispatch/dispatch.php");
+config('source',"$HOME/libs/dispatch/config.ini");
 
 
 get('/',function() {
-  render('index');
+  render('index',array('sub'=>'index'));
 });
 
-get('/test',function () {
-  render('test');
+get('/post',function () {
+  render('post',array('sub'=>'post'));
+});
+
+get('/browse',function () {
+  render('browse',array('sub'=>'browse'));
+});
+
+get('/read',function() {
+  render('read',array('sub'=>'read'));
 });
 
 dispatch();
