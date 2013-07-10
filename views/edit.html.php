@@ -8,7 +8,7 @@ $allposts=postList();
 
 foreach ($allposts as $apost) {
   list($fname,$dirname,$pfile,$mfile,$url)=makePostVars($apost);
-  echo "<a href=$url>$dirname</a><br>";
+  echo "$dirname - <a href=/post/$dirname>edit</a><br>";
 }
 
 
